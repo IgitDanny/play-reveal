@@ -1,0 +1,8 @@
+@(file:String, style: String = "", path: String = "scripts/")
+
+<div ng-controller="ReplController" ng-init="fetchCode('@routes.Assets.at(path + file)')">
+<div ng-show="hasError()">{{errorCode}} - {{error}}</div>
+<pre class="scala"><code data-trim contenteditable style="@style">
+{{code}}
+</code></pre>
+</div>
